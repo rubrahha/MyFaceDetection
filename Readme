@@ -1,0 +1,74 @@
+# Face Detection Model Comparison
+
+A comprehensive analysis and comparison of two face detection models: Caffe SSD and YuNet.
+
+## Project Overview
+
+This project evaluates and compares the performance of two modern face detection models using benchmark and stress test videos.
+
+## Installation
+
+```bash
+pip install opencv-python numpy pandas matplotlib
+```
+
+## Project Structure
+
+```
+my_face_detection/
+├── scripts/
+│   ├── test_models.py      # Basic model loading tests
+│   ├── run_detection.py    # Main detection comparison script
+│   └── confidence_analysis.py # Confidence score analysis
+├── videos/
+│   ├── video_benchmark.mp4 # Standard test video
+│   └── video_stress_test.mp4 # Challenging conditions video
+├── REPORT.txt             # Detailed analysis report
+└── README.md
+```
+
+## Key Features
+
+- Model comparison between Caffe SSD and YuNet
+- Performance testing on standard and stress conditions
+- FPS and detection count analysis
+- Confidence score analysis
+- Visual failure analysis
+
+## Results Summary
+
+### Benchmark Video
+- Caffe SSD: 11.77 FPS, 804 detections
+- YuNet: 6.56 FPS, 875 detections
+
+### Stress Test Video
+- Caffe SSD: 12.69 FPS, 0 detections
+- YuNet: 6.69 FPS, 270 detections
+
+## Key Findings
+
+- YuNet shows superior detection capabilities
+- 8.8% more detections in benchmark conditions
+- Significantly better performance in challenging scenarios
+- More consistent confidence scores
+
+## Usage
+
+1. Test model loading:
+```bash
+python scripts/test_models.py
+```
+
+2. Run detection comparison:
+```bash
+python scripts/run_detection.py
+```
+
+3. Analyze confidence scores:
+```bash
+python scripts/confidence_analysis.py
+```
+
+## Conclusion
+
+YuNet is recommended for production use with a confidence threshold of 0.40, offering better reliability and consistent detection across varying conditions.
